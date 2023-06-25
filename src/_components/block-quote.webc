@@ -1,0 +1,33 @@
+<figure class="quote">
+  <blockquote>
+    <p @html="this.quote"></p>
+  </blockquote>
+  <figcaption>
+    [<b
+      @html="this.cite"
+    ></b><template
+      webc:nokeep
+      webc:if="this.source"
+    >,
+      <i @html="`${this.source}`"></i></template>]
+  </figcaption>
+</figure>
+
+<style>
+block-quote {
+  display: block;
+}
+
+.quote {
+  margin: 0;
+}
+
+blockquote {
+  font-style: italic;
+  margin: 0;
+}
+
+blockquote > p:first-child {
+  margin-block-start: 0;
+}
+</style>

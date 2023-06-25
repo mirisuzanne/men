@@ -1,0 +1,30 @@
+{
+  "name": "men",
+  "version": "1.0.0",
+  "description": "men [in brackets]",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve --incremental",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mirisuzanne/men.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mirisuzanne/men/issues"
+  },
+  "homepage": "https://github.com/mirisuzanne/men#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-img": "^3.1.0",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-webc": "^0.11.1",
+    "dotenv": "^16.1.4",
+    "js-yaml": "^4.1.0",
+    "slugify": "^1.6.6"
+  }
+}

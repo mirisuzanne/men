@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="view-transition" content="same-origin" />
+  <title @text="this.title || site.title"></title>
+  <link rel="stylesheet" :href="`/css/style.css`" webc:keep>
+  <style @raw="getBundle('css')" webc:keep></style>
+</head>
+<body>
+  <site-header
+    :@site="site"
+    :@title="this.title"
+    :@url="this.page.url"
+  ></site-header>
+
+  <main @raw="this.content"></main>
+
+  <site-footer :@author="site.author"></site-footer>
+  <script @raw="getBundle('js')" webc:keep></script>
+</body>
+</html>
