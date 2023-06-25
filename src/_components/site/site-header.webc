@@ -1,0 +1,29 @@
+<header>
+  <template webc:if="this.url === '/'" webc:nokeep>
+    <h1 @html="site.title"></h1>
+    <a href="/report/">report</a>
+  </template>
+
+  <template webc:else webc:nokeep>
+    <a href="/" rel="home" @html="site.title"></a>
+    <h1 @html="this.title"></h1>
+  </template>
+</header>
+
+<style>
+  h1 {
+    font: inherit;
+    margin: 0;
+  }
+
+  site-header {
+    text-transform: lowercase;
+    view-transition-name: site-header;
+  }
+
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+</style>

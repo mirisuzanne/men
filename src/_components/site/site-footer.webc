@@ -1,0 +1,18 @@
+<footer>
+  <p class="cta">
+    (<a href="/report/">if you see something, say something »</a>)
+  </p>
+  <p>
+    (breaking news,
+    <a href="https://miriamsuzanne.com/" @text="this.author"></a>
+    &copy;
+    <time @text="new Date().getFullYear()"></time>)
+  </p>
+</footer>
+
+<style>
+  footer {
+    border-block-start: medium dotted;
+    margin-block-start: 1em;
+  }
+</style>

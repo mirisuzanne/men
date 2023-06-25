@@ -1,0 +1,9 @@
+---
+layout: base
+title: heard
+---
+
+<p id="intro">
+  Message received.
+  Thank you.
+</p>

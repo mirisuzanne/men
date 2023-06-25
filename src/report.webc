@@ -1,0 +1,66 @@
+---
+layout: base
+title: Submit a Report
+quote:
+  text: >
+    Be vigitant, I beseech you.
+  cite: Dogberry
+  source: Much Ado About Nothing
+---
+
+<block-quote
+  :@quote="this.quote.text"
+  :@cite="this.quote.cite"
+  :@source="this.quote.source"
+  id="intro"
+></block-quote>
+
+<form
+  name="contact"
+  method="POST"
+  action="/thanks/"
+  netlify-honeypot="bot-field"
+  data-netlify="true">
+  <p>
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" required />
+  </p>
+  <p>
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required />
+  </p>
+  <p>
+    <label for="image">Image URL:</label>
+    <input type="url" name="image" id="image">
+  </p>
+  <p>
+    <label for="message">Details:</label>
+    <textarea name="message" id="message"></textarea>
+  </p>
+  <p hidden>
+    <label>
+      Don’t fill this out if you’re human:
+    </label>
+    <input name="bot-field" />
+  </p>
+  <p>
+    <button type="submit">Report</button>
+  </p>
+</form>
+
+<style>
+  input, textarea {
+    display: block;
+    font: inherit;
+    width: 100%;
+  }
+
+  textarea {
+    block-size: 4em;
+    block-size: 4lh;
+  }
+
+  button {
+    font: inherit;
+  }
+</style>

@@ -1,0 +1,17 @@
+<template
+  webc:nokeep
+  @html="img(this.src, this.alt, this.sizes, this.attrs)"
+></template>
+
+<style>
+  p-icture,
+  picture {
+    display: contents;
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+    view-transition-name: var(--img);
+  }
+</style>
