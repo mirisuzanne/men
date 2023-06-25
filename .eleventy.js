@@ -8,7 +8,7 @@ const imgPlugin= require("./plugins/images");
 
 
 module.exports = function(eleventyConfig) {
-	eleventyConfig.addPlugin(EleventyRenderPlugin);
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(pluginWebc, {
     components: [
       'src/_components/**/*.webc',
@@ -20,8 +20,8 @@ module.exports = function(eleventyConfig) {
     return `/data-men/${slugify(img.date)}/index.html`;
   });
 
-	// Image plugin
-	eleventyConfig.addPlugin(imgPlugin, {
+  // Image plugin
+  eleventyConfig.addPlugin(imgPlugin, {
     imgFolder: './assets/images/',
     output: {
       formats: ['avif', 'jpeg'],
@@ -42,10 +42,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addDataExtension('yml, yaml', (c) => yaml.load(c));
   eleventyConfig.setQuietMode(true);
 
-	return {
+  return {
     dir: {
       input: 'src',
-			layouts: '_layouts'
+      layouts: '_layouts'
     }
   }
 
