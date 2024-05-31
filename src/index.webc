@@ -1,64 +1,20 @@
 ---
 layout: base
+column: full
 quote:
   text: >
     O, what men dare do!
-    What men may do! What men daily do,
+    What men may do!
+    What men daily do,
     not knowing what they do!
-  cite: Claudio
-  source: Much Ado About Nothing
 ---
 
 <block-quote
+  webc:if="this.quote"
   :@quote="this.quote.text"
   :@cite="this.quote.cite"
   :@source="this.quote.source"
   id="intro"
 ></block-quote>
 
-<nav>
-  <a
-    webc:for="item of collections.img.filter(p => p.data.live)"
-    :href="item.url">
-    <p-icture webc:nokeep
-      :src="item.data.hero.url"
-      :alt="item.data.hero.alt"
-      sizes="250w"></p-icture>
-  </a>
-</nav>
-
-<style>
-  nav {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(20ch, 100%), 1fr));
-    gap: 1em;
-    margin-block: 2em;
-  }
-
-  @media (min-width: 45em) {
-    nav {
-      margin-inline: -1em;
-    }
-  }
-
-  nav a:any-link {
-    border: medium solid;
-    display: block;
-    position: relative;
-  }
-
-  nav a:focus,
-  nav a:hover,
-  nav a:active {
-    border-color: var(--accent);
-    rotate: 2deg;
-    scale: 1.05;
-    z-index: 2;
-  }
-
-  nav img {
-    aspect-ratio: 16/9;
-    overflow: hidden;
-    object-fit: cover;
-  }
-</style>
+<man-grid :@men="collections.men"></man-grid>

@@ -1,0 +1,36 @@
+<script webc:setup>
+  const imgAttrs = {
+    default: {
+      sizes: '95vw',
+    },
+    grid: {
+      width: [400, 640],
+      sizes: '15em'
+    },
+    hero: {
+      sizes: '(min-width: 50em) 50em, 95vw',
+      loading: 'eager',
+      decoding: 'auto',
+    },
+  };
+</script>
+
+<img
+	webc:is="eleventy-image"
+  :src="this.src.includes('://') ? this.src : `./src/men/${this.src}`"
+  :alt="this.alt || ''"
+  @attributes="imgAttrs[this.preSet || 'default']"
+/>
+
+<style>
+  picture {
+    display: contents;
+  }
+
+  img {
+    display: block;
+    height: auto;
+    width: 100%;
+    view-transition-name: var(--img);
+  }
+</style>

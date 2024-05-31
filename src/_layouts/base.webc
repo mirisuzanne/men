@@ -11,14 +11,21 @@
 </head>
 <body>
   <site-header
+    webc:nokeep
     :@site="site"
-    :@title="this.title"
+    :@title="this.title || site.title"
     :@url="this.page.url"
   ></site-header>
 
-  <main @raw="this.content"></main>
+  <main
+    @raw="this.content"
+    :style="this.column ? `--column: ${this.column}` : ''"
+  ></main>
 
-  <site-footer :@author="site.author"></site-footer>
+  <site-footer
+    webc:nokeep
+    :@author="site.author"
+  ></site-footer>
   <script @raw="getBundle('js')" webc:keep></script>
 </body>
 </html>

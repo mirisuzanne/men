@@ -8,7 +8,9 @@
   <title>[men]</title>
   <link rel="stylesheet" href="/css/style.css">
   <style>block-quote {
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(min-content, 65rch);
+  justify-content: safe center;
 }
 
 .quote {
@@ -18,175 +20,547 @@
 blockquote {
   font-style: italic;
   margin: 0;
-}
 
-blockquote > p:first-child {
-  margin-block-start: 0;
+  > p:first-child {
+    margin-block-start: 0;
+  }
+
+  > p:last-child {
+    margin-block-end: 0;
+  }
 }
-p-icture,
-  picture {
+picture {
     display: contents;
   }
 
   img {
+    display: block;
     height: auto;
     width: 100%;
     view-transition-name: var(--img);
   }
-nav {
+man-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(20ch, 100%), 1fr));
-    gap: 1em;
-    margin-block: 2em;
-  }
 
-  @media (min-width: 45em) {
-    nav {
-      margin-inline: -1em;
+    b {
+      background-color: light-dark(white, black);
+      opacity: var(--show-title, 0);
+      position: absolute;
+      inset: 0;
+      place-self: center;
     }
-  }
 
-  nav a:any-link {
-    border: medium solid;
-    display: block;
-    position: relative;
-  }
+    a:any-link {
+      border: medium solid;
+      display: block;
+      position: relative;
+    }
 
-  nav a:focus,
-  nav a:hover,
-  nav a:active {
-    border-color: var(--accent);
-    rotate: 2deg;
-    scale: 1.05;
-    z-index: 2;
-  }
+    a:focus,
+    a:focus-within,
+    a:hover,
+    a:active {
+      --show-title: 1;
+      border-color: var(--accent);
+      rotate: 2deg;
+      scale: 1.05;
+      z-index: 2;
+    }
 
-  nav img {
-    aspect-ratio: 16/9;
-    overflow: hidden;
-    object-fit: cover;
+    img {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      object-fit: cover;
+    }
   }
 h1 {
     font: inherit;
     margin: 0;
   }
 
-  site-header {
-    text-transform: lowercase;
-    view-transition-name: site-header;
-  }
-
-  header {
+  body > header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
-footer {
-    border-block-start: medium dotted;
-    margin-block-start: 1em;
+    padding-block: var(--gap);
+    text-transform: lowercase;
+    view-transition-name: site-header;
   }</style>
 </head>
 <body>
-  <site-header><header>
+  <header>
   
     <h1>[men]</h1>
-    <a href="/report/">report</a>
+
+    <div>
+      <a href="/report/">report</a>
+    </div>
   
 
   
 </header>
 
 
-</site-header>
 
-  <main><block-quote id="intro"><figure class="quote">
+
+  <main style="--column: full"><block-quote id="intro"><figure class="quote">
   <blockquote>
     <p>O, what men dare do! What men may do! What men daily do, not knowing what they do!
 </p>
   </blockquote>
-  <figcaption>
-    [<b>Claudio</b>,
-      <i>Much Ado About Nothing</i>]
-  </figcaption>
+  
 </figure>
 
 
 </block-quote>
 
-<nav>
-  <a href="/men/2023-06-25/french/">
-    <picture><source type="image/avif" srcset="/img/_PauNuI4ZH-640.avif 640w, /img/_PauNuI4ZH-960.avif 960w, /img/_PauNuI4ZH-1600.avif 1600w" sizes="250w"><source type="image/jpeg" srcset="/img/_PauNuI4ZH-640.jpeg 640w, /img/_PauNuI4ZH-960.jpeg 960w, /img/_PauNuI4ZH-1600.jpeg 1600w" sizes="250w"><img alt="over the shoulder, a white man in a suit holds a police radio in front of a young white officer sho is sitting on the ground, with her back against the bumper of a car" loading="lazy" decoding="async" src="/img/_PauNuI4ZH-640.jpeg" width="1600" height="1200" style="--img: french-2023-06-25"></picture>
+<man-grid><a href="/men/2019/2019-11-21T1949-000/">
+  <b>Thu Nov 21, 2019</b>
+  <man-img src="2019/2019-11-21T1949-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/jx-r92DKMs-400.avif 400w, /img/jx-r92DKMs-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/jx-r92DKMs-400.jpeg" alt width="640" height="480" srcset="/img/jx-r92DKMs-400.jpeg 400w, /img/jx-r92DKMs-640.jpeg 640w" sizes="15em"></picture>
 
 
+</man-img>
+</a>
+<a href="/men/2019/2019-09-01T2320-000/">
+  <b>Sun Sep 1, 2019</b>
+  <man-img src="2019/2019-09-01T2320-000.jpeg">
 
-  </a>
-<a href="/men/2023-06-25/distant-men/">
-    <picture><source type="image/avif" srcset="/img/hdfNRp6W4g-640.avif 640w, /img/hdfNRp6W4g-960.avif 960w, /img/hdfNRp6W4g-1600.avif 1600w" sizes="250w"><source type="image/jpeg" srcset="/img/hdfNRp6W4g-640.jpeg 640w, /img/hdfNRp6W4g-960.jpeg 960w, /img/hdfNRp6W4g-1600.jpeg 1600w" sizes="250w"><img alt="a three-masted ship, sailing across a vast ocean" loading="lazy" decoding="async" src="/img/hdfNRp6W4g-640.jpeg" width="1600" height="883" style="--img: distant-2023-06-25"></picture>
-
-
-
-  </a>
-<a href="/men/2023-06-22/jack-reynor/">
-    <picture><source type="image/avif" srcset="/img/QIz48q_uv--640.avif 640w, /img/QIz48q_uv--960.avif 960w, /img/QIz48q_uv--1600.avif 1600w" sizes="250w"><source type="image/jpeg" srcset="/img/QIz48q_uv--640.jpeg 640w, /img/QIz48q_uv--960.jpeg 960w, /img/QIz48q_uv--1600.jpeg 1600w" sizes="250w"><img alt="Blurry men in suits over a flowering hedge, and the name Jack Reynor in all-caps movie font - there's a playhead at the bottom, showing the film just started" loading="lazy" decoding="async" src="/img/QIz48q_uv--640.jpeg" width="1600" height="900" style="--img: jack-2023-06-22"></picture>
+<picture><source type="image/avif" srcset="/img/AqqYtJgaFN-400.avif 400w, /img/AqqYtJgaFN-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/AqqYtJgaFN-400.jpeg" alt width="640" height="480" srcset="/img/AqqYtJgaFN-400.jpeg 400w, /img/AqqYtJgaFN-640.jpeg 640w" sizes="15em"></picture>
 
 
+</man-img>
+</a>
+<a href="/men/2019/2019-09-15T0956-000/">
+  <b>Sun Sep 15, 2019</b>
+  <man-img src="2019/2019-09-15T0956-000.jpeg">
 
-  </a>
-<a href="/men/2023-06-25/jeering/">
-    <picture><source type="image/avif" srcset="/img/WQh4Wyw1cw-640.avif 640w, /img/WQh4Wyw1cw-960.avif 960w, /img/WQh4Wyw1cw-1600.avif 1600w" sizes="250w"><source type="image/jpeg" srcset="/img/WQh4Wyw1cw-640.jpeg 640w, /img/WQh4Wyw1cw-960.jpeg 960w, /img/WQh4Wyw1cw-1600.jpeg 1600w" sizes="250w"><img alt="a black man in a red flannel and black touque looking off to the left, maybe pained, in front of a beige stucco building" loading="lazy" decoding="async" src="/img/WQh4Wyw1cw-640.jpeg" width="1600" height="1038" style="--img: jeering-2023-06-25"></picture>
-
-
-
-  </a>
-<a href="/men/2023-06-25/resounding/">
-    <picture><source type="image/avif" srcset="/img/edJof4-7wy-640.avif 640w, /img/edJof4-7wy-960.avif 960w, /img/edJof4-7wy-1600.avif 1600w" sizes="250w"><source type="image/jpeg" srcset="/img/edJof4-7wy-640.jpeg 640w, /img/edJof4-7wy-960.jpeg 960w, /img/edJof4-7wy-1600.jpeg 1600w" sizes="250w"><img alt="an old tv on a messy shelf, surrounded by vhs tapes, a first-generation nintendo console, and shelves of vinyl records - on screen, over-shoulder of shaolin monks with swords locked" loading="lazy" decoding="async" src="/img/edJof4-7wy-640.jpeg" width="1600" height="1200" style="--img: resounding-2023-06-25"></picture>
+<picture><source type="image/avif" srcset="/img/g7B40q41sg-400.avif 400w, /img/g7B40q41sg-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/g7B40q41sg-400.jpeg" alt width="640" height="341" srcset="/img/g7B40q41sg-400.jpeg 400w, /img/g7B40q41sg-640.jpeg 640w" sizes="15em"></picture>
 
 
+</man-img>
+</a>
+<a href="/men/2019/2019-09-26T2328-000/">
+  <b>Thu Sep 26, 2019</b>
+  <man-img src="2019/2019-09-26T2328-000.jpeg">
 
-  </a>
-<a href="/men/2023-06-25/gasping/">
-    <picture><source type="image/avif" srcset="/img/8mwvg87MBd-640.avif 640w, /img/8mwvg87MBd-960.avif 960w, /img/8mwvg87MBd-1600.avif 1600w" sizes="250w"><source type="image/jpeg" srcset="/img/8mwvg87MBd-640.jpeg 640w, /img/8mwvg87MBd-960.jpeg 960w, /img/8mwvg87MBd-1600.jpeg 1600w" sizes="250w"><img alt="young black man in camo and a bandana, standing in a hallway, looking at the ground, with backlight through a grated window" loading="lazy" decoding="async" src="/img/8mwvg87MBd-640.jpeg" width="1600" height="1200" style="--img: gasping-2023-06-25"></picture>
-
-
-
-  </a>
-<a href="/men/2023-06-25/more-shouting/">
-    <picture><source type="image/avif" srcset="/img/cRiTRbBgl8-640.avif 640w, /img/cRiTRbBgl8-960.avif 960w, /img/cRiTRbBgl8-1600.avif 1600w" sizes="250w"><source type="image/jpeg" srcset="/img/cRiTRbBgl8-640.jpeg 640w, /img/cRiTRbBgl8-960.jpeg 960w, /img/cRiTRbBgl8-1600.jpeg 1600w" sizes="250w"><img alt="Ropes and sails, looking back from the middle of a sailing ship - figures on the deck are hard to make out, an ocean in the background" loading="lazy" decoding="async" src="/img/cRiTRbBgl8-640.jpeg" width="1600" height="852" style="--img: shouting-2023-06-25"></picture>
+<picture><source type="image/avif" srcset="/img/5Ma_7XKZ82-400.avif 400w, /img/5Ma_7XKZ82-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/5Ma_7XKZ82-400.jpeg" alt width="640" height="480" srcset="/img/5Ma_7XKZ82-400.jpeg 400w, /img/5Ma_7XKZ82-640.jpeg 640w" sizes="15em"></picture>
 
 
+</man-img>
+</a>
+<a href="/men/2019/2019-09-19T2313-000/">
+  <b>Thu Sep 19, 2019</b>
+  <man-img src="2019/2019-09-19T2313-000.jpeg">
 
-  </a>
-<a href="/men/2023-06-25/tv/">
-    <picture><source type="image/avif" srcset="/img/vjUcM5Graw-640.avif 640w, /img/vjUcM5Graw-960.avif 960w, /img/vjUcM5Graw-1600.avif 1600w" sizes="250w"><source type="image/jpeg" srcset="/img/vjUcM5Graw-640.jpeg 640w, /img/vjUcM5Graw-960.jpeg 960w, /img/vjUcM5Graw-1600.jpeg 1600w" sizes="250w"><img alt="over an orange shoulder, an old TV on a cart showing tennis shoes on a basketball court, and a parot in a cage" loading="lazy" decoding="async" src="/img/vjUcM5Graw-640.jpeg" width="1600" height="1200" style="--img: tv-2023-06-25"></picture>
-
-
-
-  </a>
-<a href="/men/2023-06-25/chattering/">
-    <picture><source type="image/avif" srcset="/img/P3h-nzm6J9-640.avif 640w, /img/P3h-nzm6J9-960.avif 960w, /img/P3h-nzm6J9-1600.avif 1600w" sizes="250w"><source type="image/jpeg" srcset="/img/P3h-nzm6J9-640.jpeg 640w, /img/P3h-nzm6J9-960.jpeg 960w, /img/P3h-nzm6J9-1600.jpeg 1600w" sizes="250w"><img alt="Keanu dripping wet and winded in a suit in the rain in the shadows of an alley" loading="lazy" decoding="async" src="/img/P3h-nzm6J9-640.jpeg" width="1600" height="1117" style="--img: chattering-2023-06-25"></picture>
+<picture><source type="image/avif" srcset="/img/oG5Q1jFcXd-400.avif 400w, /img/oG5Q1jFcXd-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/oG5Q1jFcXd-400.jpeg" alt width="640" height="480" srcset="/img/oG5Q1jFcXd-400.jpeg 400w, /img/oG5Q1jFcXd-640.jpeg 640w" sizes="15em"></picture>
 
 
+</man-img>
+</a>
+<a href="/men/2019/2019-12-06T2256-000/">
+  <b>Fri Dec 6, 2019</b>
+  <man-img src="2019/2019-12-06T2256-000.jpeg">
 
-  </a>
-</nav>
+<picture><source type="image/avif" srcset="/img/3yr-1C8KC3-400.avif 400w, /img/3yr-1C8KC3-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/3yr-1C8KC3-400.jpeg" alt width="640" height="480" srcset="/img/3yr-1C8KC3-400.jpeg 400w, /img/3yr-1C8KC3-640.jpeg 640w" sizes="15em"></picture>
 
 
+</man-img>
+</a>
+<a href="/men/2019/2019-11-21T2130-000/">
+  <b>Thu Nov 21, 2019</b>
+  <man-img src="2019/2019-11-21T2130-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/vHxrIeAEqz-400.avif 400w, /img/vHxrIeAEqz-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/vHxrIeAEqz-400.jpeg" alt width="640" height="480" srcset="/img/vHxrIeAEqz-400.jpeg 400w, /img/vHxrIeAEqz-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-05-12T2325-000/">
+  <b>Fri May 12, 2023</b>
+  <man-img src="2023/2023-05-12T2325-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/ug7Wue85GU-400.avif 400w, /img/ug7Wue85GU-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/ug7Wue85GU-400.jpeg" alt width="640" height="480" srcset="/img/ug7Wue85GU-400.jpeg 400w, /img/ug7Wue85GU-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-06-14T2113-000/">
+  <b>Wed Jun 14, 2023</b>
+  <man-img src="2023/2023-06-14T2113-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/xs-z-Tq6sq-400.avif 400w, /img/xs-z-Tq6sq-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/xs-z-Tq6sq-400.jpeg" alt width="640" height="480" srcset="/img/xs-z-Tq6sq-400.jpeg 400w, /img/xs-z-Tq6sq-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2019/2019-09-24T2312-000/">
+  <b>Tue Sep 24, 2019</b>
+  <man-img src="2019/2019-09-24T2312-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/zZLxxrRtV5-400.avif 400w, /img/zZLxxrRtV5-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/zZLxxrRtV5-400.jpeg" alt width="640" height="480" srcset="/img/zZLxxrRtV5-400.jpeg 400w, /img/zZLxxrRtV5-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-07-18T2040-000/">
+  <b>Tue Jul 18, 2023</b>
+  <man-img src="2023/2023-07-18T2040-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/mPRWa0wB-U-400.avif 400w, /img/mPRWa0wB-U-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/mPRWa0wB-U-400.jpeg" alt width="640" height="480" srcset="/img/mPRWa0wB-U-400.jpeg 400w, /img/mPRWa0wB-U-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2019/2019-09-21T2322-000/">
+  <b>Sat Sep 21, 2019</b>
+  <man-img src="2019/2019-09-21T2322-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/ee9Jh_FPT_-400.avif 400w, /img/ee9Jh_FPT_-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/ee9Jh_FPT_-400.jpeg" alt width="640" height="480" srcset="/img/ee9Jh_FPT_-400.jpeg 400w, /img/ee9Jh_FPT_-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-05-12T2321-000/">
+  <b>Fri May 12, 2023</b>
+  <man-img src="2023/2023-05-12T2321-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/fH_e0KfyKC-400.avif 400w, /img/fH_e0KfyKC-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/fH_e0KfyKC-400.jpeg" alt width="640" height="480" srcset="/img/fH_e0KfyKC-400.jpeg 400w, /img/fH_e0KfyKC-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2019/2019-08-23T2352-000/">
+  <b>Fri Aug 23, 2019</b>
+  <man-img src="2019/2019-08-23T2352-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/VuQNHYmmNW-400.avif 400w, /img/VuQNHYmmNW-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/VuQNHYmmNW-400.jpeg" alt width="640" height="360" srcset="/img/VuQNHYmmNW-400.jpeg 400w, /img/VuQNHYmmNW-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-06-14T2109-000/">
+  <b>Wed Jun 14, 2023</b>
+  <man-img src="2023/2023-06-14T2109-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/tDN5pKVruL-400.avif 400w, /img/tDN5pKVruL-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/tDN5pKVruL-400.jpeg" alt width="640" height="480" srcset="/img/tDN5pKVruL-400.jpeg 400w, /img/tDN5pKVruL-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2019/2019-10-21T1246-000/">
+  <b>Mon Oct 21, 2019</b>
+  <man-img src="2019/2019-10-21T1246-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/vLYG5BvbJk-400.avif 400w, /img/vLYG5BvbJk-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/vLYG5BvbJk-400.jpeg" alt width="640" height="447" srcset="/img/vLYG5BvbJk-400.jpeg 400w, /img/vLYG5BvbJk-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2019/2019-10-30T2207-000/">
+  <b>Wed Oct 30, 2019</b>
+  <man-img src="2019/2019-10-30T2207-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/JAdClYrOhB-400.avif 400w, /img/JAdClYrOhB-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/JAdClYrOhB-400.jpeg" alt width="640" height="480" srcset="/img/JAdClYrOhB-400.jpeg 400w, /img/JAdClYrOhB-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2019/2019-10-21T1259-000/">
+  <b>Mon Oct 21, 2019</b>
+  <man-img src="2019/2019-10-21T1259-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/Cdw_MxF0I2-400.avif 400w, /img/Cdw_MxF0I2-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/Cdw_MxF0I2-400.jpeg" alt width="640" height="447" srcset="/img/Cdw_MxF0I2-400.jpeg 400w, /img/Cdw_MxF0I2-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-05-12T2330-000/">
+  <b>Fri May 12, 2023</b>
+  <man-img src="2023/2023-05-12T2330-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/qH4m8RDg2B-400.avif 400w, /img/qH4m8RDg2B-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/qH4m8RDg2B-400.jpeg" alt width="640" height="480" srcset="/img/qH4m8RDg2B-400.jpeg 400w, /img/qH4m8RDg2B-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2019/2019-10-25T1837-000/">
+  <b>Fri Oct 25, 2019</b>
+  <man-img src="2019/2019-10-25T1837-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/9cqkcdWbk4-400.avif 400w, /img/9cqkcdWbk4-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/9cqkcdWbk4-400.jpeg" alt width="640" height="296" srcset="/img/9cqkcdWbk4-400.jpeg 400w, /img/9cqkcdWbk4-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2019/2019-11-21T2137-000/">
+  <b>Thu Nov 21, 2019</b>
+  <man-img src="2019/2019-11-21T2137-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/jm0_Skpemh-400.avif 400w, /img/jm0_Skpemh-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/jm0_Skpemh-400.jpeg" alt width="640" height="480" srcset="/img/jm0_Skpemh-400.jpeg 400w, /img/jm0_Skpemh-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-06-14T2107-000/">
+  <b>Wed Jun 14, 2023</b>
+  <man-img src="2023/2023-06-14T2107-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/QKJ7lev61V-400.avif 400w, /img/QKJ7lev61V-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/QKJ7lev61V-400.jpeg" alt width="640" height="480" srcset="/img/QKJ7lev61V-400.jpeg 400w, /img/QKJ7lev61V-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-06-16T2025-000/">
+  <b>Fri Jun 16, 2023</b>
+  <man-img src="2023/2023-06-16T2025-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/0w5a_dcGB--400.avif 400w, /img/0w5a_dcGB--640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/0w5a_dcGB--400.jpeg" alt width="640" height="480" srcset="/img/0w5a_dcGB--400.jpeg 400w, /img/0w5a_dcGB--640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-05-03T2327-000/">
+  <b>Wed May 3, 2023</b>
+  <man-img src="2023/2023-05-03T2327-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/kwU01SQt5p-400.avif 400w, /img/kwU01SQt5p-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/kwU01SQt5p-400.jpeg" alt width="640" height="480" srcset="/img/kwU01SQt5p-400.jpeg 400w, /img/kwU01SQt5p-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-11-23T2011-000/">
+  <b>Thu Nov 23, 2023</b>
+  <man-img src="2023/2023-11-23T2011-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/VfCM1hpW4c-400.avif 400w, /img/VfCM1hpW4c-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/VfCM1hpW4c-400.jpeg" alt width="640" height="480" srcset="/img/VfCM1hpW4c-400.jpeg 400w, /img/VfCM1hpW4c-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-09-17T1459-000/">
+  <b>Sun Sep 17, 2023</b>
+  <man-img src="2023/2023-09-17T1459-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/BMqTTw7kuW-400.avif 400w, /img/BMqTTw7kuW-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/BMqTTw7kuW-400.jpeg" alt width="640" height="480" srcset="/img/BMqTTw7kuW-400.jpeg 400w, /img/BMqTTw7kuW-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-06-11T1826-000/">
+  <b>Sun Jun 11, 2023</b>
+  <man-img src="2023/2023-06-11T1826-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/Ld0h9TPiBg-400.avif 400w, /img/Ld0h9TPiBg-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/Ld0h9TPiBg-400.jpeg" alt width="640" height="480" srcset="/img/Ld0h9TPiBg-400.jpeg 400w, /img/Ld0h9TPiBg-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2019/2019-12-15T2002-000/">
+  <b>Sun Dec 15, 2019</b>
+  <man-img src="2019/2019-12-15T2002-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/DI24EBixuk-400.avif 400w, /img/DI24EBixuk-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/DI24EBixuk-400.jpeg" alt width="640" height="480" srcset="/img/DI24EBixuk-400.jpeg 400w, /img/DI24EBixuk-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-05-03T2236-000/">
+  <b>Wed May 3, 2023</b>
+  <man-img src="2023/2023-05-03T2236-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/_m0RanYiNN-400.avif 400w, /img/_m0RanYiNN-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/_m0RanYiNN-400.jpeg" alt width="640" height="480" srcset="/img/_m0RanYiNN-400.jpeg 400w, /img/_m0RanYiNN-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2019/2019-10-30T2249-000/">
+  <b>Wed Oct 30, 2019</b>
+  <man-img src="2019/2019-10-30T2249-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/I8-yeuUo4_-400.avif 400w, /img/I8-yeuUo4_-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/I8-yeuUo4_-400.jpeg" alt width="640" height="480" srcset="/img/I8-yeuUo4_-400.jpeg 400w, /img/I8-yeuUo4_-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2019/2019-12-19T1951-000/">
+  <b>Thu Dec 19, 2019</b>
+  <man-img src="2019/2019-12-19T1951-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/XtoweSuPOs-400.avif 400w, /img/XtoweSuPOs-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/XtoweSuPOs-400.jpeg" alt width="640" height="480" srcset="/img/XtoweSuPOs-400.jpeg 400w, /img/XtoweSuPOs-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-05-12T2320-000/">
+  <b>Fri May 12, 2023</b>
+  <man-img src="2023/2023-05-12T2320-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/JvBDlRoE20-400.avif 400w, /img/JvBDlRoE20-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/JvBDlRoE20-400.jpeg" alt width="640" height="480" srcset="/img/JvBDlRoE20-400.jpeg 400w, /img/JvBDlRoE20-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-06-14T2114-000/">
+  <b>Wed Jun 14, 2023</b>
+  <man-img src="2023/2023-06-14T2114-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/mNAPn2dLo0-400.avif 400w, /img/mNAPn2dLo0-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/mNAPn2dLo0-400.jpeg" alt width="640" height="480" srcset="/img/mNAPn2dLo0-400.jpeg 400w, /img/mNAPn2dLo0-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-06-11T1829-000/">
+  <b>Sun Jun 11, 2023</b>
+  <man-img src="2023/2023-06-11T1829-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/pNpZlJBnEC-400.avif 400w, /img/pNpZlJBnEC-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/pNpZlJBnEC-400.jpeg" alt width="640" height="480" srcset="/img/pNpZlJBnEC-400.jpeg 400w, /img/pNpZlJBnEC-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2019/2019-11-21T1957-000/">
+  <b>Thu Nov 21, 2019</b>
+  <man-img src="2019/2019-11-21T1957-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/cEqSOTrsi8-400.avif 400w, /img/cEqSOTrsi8-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/cEqSOTrsi8-400.jpeg" alt width="640" height="480" srcset="/img/cEqSOTrsi8-400.jpeg 400w, /img/cEqSOTrsi8-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-11-26T1944-000/">
+  <b>Sun Nov 26, 2023</b>
+  <man-img src="2023/2023-11-26T1944-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/HiCIMfc1L2-400.avif 400w, /img/HiCIMfc1L2-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/HiCIMfc1L2-400.jpeg" alt width="640" height="480" srcset="/img/HiCIMfc1L2-400.jpeg 400w, /img/HiCIMfc1L2-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2019/2019-12-15T2003-000/">
+  <b>Sun Dec 15, 2019</b>
+  <man-img src="2019/2019-12-15T2003-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/ORUyrlsEHP-400.avif 400w, /img/ORUyrlsEHP-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/ORUyrlsEHP-400.jpeg" alt width="640" height="480" srcset="/img/ORUyrlsEHP-400.jpeg 400w, /img/ORUyrlsEHP-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-05-15T2013-000/">
+  <b>Mon May 15, 2023</b>
+  <man-img src="2023/2023-05-15T2013-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/gfDHq7j5BX-400.avif 400w, /img/gfDHq7j5BX-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/gfDHq7j5BX-400.jpeg" alt width="640" height="480" srcset="/img/gfDHq7j5BX-400.jpeg 400w, /img/gfDHq7j5BX-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2019/2019-09-19T2247-000/">
+  <b>Thu Sep 19, 2019</b>
+  <man-img src="2019/2019-09-19T2247-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/-rnAHKBabn-400.avif 400w, /img/-rnAHKBabn-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/-rnAHKBabn-400.jpeg" alt width="640" height="480" srcset="/img/-rnAHKBabn-400.jpeg 400w, /img/-rnAHKBabn-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-07-18T2043-000/">
+  <b>Tue Jul 18, 2023</b>
+  <man-img src="2023/2023-07-18T2043-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/e8vFx7G_i1-400.avif 400w, /img/e8vFx7G_i1-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/e8vFx7G_i1-400.jpeg" alt width="640" height="336" srcset="/img/e8vFx7G_i1-400.jpeg 400w, /img/e8vFx7G_i1-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2019/2019-09-01T1230-000/">
+  <b>Sun Sep 1, 2019</b>
+  <man-img src="2019/2019-09-01T1230-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/B7396B264x-400.avif 400w, /img/B7396B264x-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/B7396B264x-400.jpeg" alt width="640" height="353" srcset="/img/B7396B264x-400.jpeg 400w, /img/B7396B264x-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-05-12T2327-000/">
+  <b>Fri May 12, 2023</b>
+  <man-img src="2023/2023-05-12T2327-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/WV-tnvtYwg-400.avif 400w, /img/WV-tnvtYwg-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/WV-tnvtYwg-400.jpeg" alt width="640" height="480" srcset="/img/WV-tnvtYwg-400.jpeg 400w, /img/WV-tnvtYwg-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-07-18T2042-000/">
+  <b>Tue Jul 18, 2023</b>
+  <man-img src="2023/2023-07-18T2042-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/PpHFX9xFne-400.avif 400w, /img/PpHFX9xFne-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/PpHFX9xFne-400.jpeg" alt width="640" height="478" srcset="/img/PpHFX9xFne-400.jpeg 400w, /img/PpHFX9xFne-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-06-14T2036-000/">
+  <b>Wed Jun 14, 2023</b>
+  <man-img src="2023/2023-06-14T2036-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/N7gnTulB1E-400.avif 400w, /img/N7gnTulB1E-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/N7gnTulB1E-400.jpeg" alt width="640" height="480" srcset="/img/N7gnTulB1E-400.jpeg 400w, /img/N7gnTulB1E-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2019/2019-09-19T2348-000/">
+  <b>Thu Sep 19, 2019</b>
+  <man-img src="2019/2019-09-19T2348-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/5TRWffJ6Eu-400.avif 400w, /img/5TRWffJ6Eu-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/5TRWffJ6Eu-400.jpeg" alt width="640" height="480" srcset="/img/5TRWffJ6Eu-400.jpeg 400w, /img/5TRWffJ6Eu-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2019/2019-11-21T2127-000/">
+  <b>Thu Nov 21, 2019</b>
+  <man-img src="2019/2019-11-21T2127-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/--UFqIHiXi-400.avif 400w, /img/--UFqIHiXi-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/--UFqIHiXi-400.jpeg" alt width="640" height="480" srcset="/img/--UFqIHiXi-400.jpeg 400w, /img/--UFqIHiXi-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-09-17T1446-000/">
+  <b>Sun Sep 17, 2023</b>
+  <man-img src="2023/2023-09-17T1446-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/6T1cRANI3g-400.avif 400w, /img/6T1cRANI3g-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/6T1cRANI3g-400.jpeg" alt width="640" height="480" srcset="/img/6T1cRANI3g-400.jpeg 400w, /img/6T1cRANI3g-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+<a href="/men/2023/2023-05-12T2326-000/">
+  <b>Fri May 12, 2023</b>
+  <man-img src="2023/2023-05-12T2326-000.jpeg">
+
+<picture><source type="image/avif" srcset="/img/WAH2CfDwsN-400.avif 400w, /img/WAH2CfDwsN-640.avif 640w" sizes="15em"><img loading="lazy" decoding="async" src="/img/WAH2CfDwsN-400.jpeg" alt width="640" height="480" srcset="/img/WAH2CfDwsN-400.jpeg 400w, /img/WAH2CfDwsN-640.jpeg 640w" sizes="15em"></picture>
+
+
+</man-img>
+</a>
+
+
+</man-grid>
 </main>
 
-  <site-footer><footer>
-  <p class="cta">
-    (<a href="/report/">if you see something, say something »</a>)
-  </p>
+  <footer>
   <p>
-    (breaking news,
-    <a href="https://miriamsuzanne.com/">Miriam Suzanne</a>
+    <time>2024</time>
     ©
-    <time>2023</time>)
+    <a href="https://miriamsuzanne.com/">Miriam Suzanne</a>
+    (not a man)
   </p>
 </footer>
 
-
-</site-footer>
   <script></script>
 
 

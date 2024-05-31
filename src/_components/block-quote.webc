@@ -2,7 +2,7 @@
   <blockquote>
     <p @html="this.quote"></p>
   </blockquote>
-  <figcaption>
+  <figcaption webc:if="this.cite || this.source">
     [<b
       @html="this.cite"
     ></b><template
@@ -15,7 +15,9 @@
 
 <style>
 block-quote {
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(min-content, 65rch);
+  justify-content: safe center;
 }
 
 .quote {
@@ -25,9 +27,14 @@ block-quote {
 blockquote {
   font-style: italic;
   margin: 0;
+
+  > p:first-child {
+    margin-block-start: 0;
+  }
+
+  > p:last-child {
+    margin-block-end: 0;
+  }
 }
 
-blockquote > p:first-child {
-  margin-block-start: 0;
-}
 </style>

@@ -1,11 +1,9 @@
 ---
 layout: base
-title: Submit a Report
+title: Report a sighting
 quote:
   text: >
     Be vigitant, I beseech you.
-  cite: Dogberry
-  source: Much Ado About Nothing
 ---
 
 <block-quote
@@ -22,7 +20,7 @@ quote:
   netlify-honeypot="bot-field"
   data-netlify="true">
   <p>
-    <label for="name">Name:</label>
+    <label for="name">Your Name:</label>
     <input type="text" name="name" id="name" required />
   </p>
   <p>
@@ -44,7 +42,7 @@ quote:
     <input name="bot-field" />
   </p>
   <p>
-    <button type="submit">Report</button>
+    <button type="submit">Report →</button>
   </p>
 </form>
 
@@ -53,6 +51,10 @@ quote:
     display: block;
     font: inherit;
     width: 100%;
+
+    &:focus {
+      border-color: var(--accent);
+    }
   }
 
   textarea {
@@ -61,6 +63,14 @@ quote:
   }
 
   button {
+    background-color: transparent;
+    border: medium solid;
     font: inherit;
+    padding-inline: var(--gap);
+
+    &:focus,
+    &:hover {
+      border-color: var(--accent);
+    }
   }
 </style>

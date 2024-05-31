@@ -1,9 +1,12 @@
 ---
 layout: base
-title: heard
+title: got 'em
+column: full
 ---
 
 <p id="intro">
   Message received.
   Thank you.
 </p>
+
+<man-grid :@men="collections.men"></man-grid>

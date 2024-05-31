@@ -1,0 +1,47 @@
+<a
+  webc:for="item of this.men.sort((a, b) => Math.random() - 0.5)"
+  :href="item.url">
+  <b @text="asDate(item.date)"></b>
+  <man-img
+    @pre-set="grid"
+    :src="item.data.hero"
+  ></man-img>
+</a>
+
+<style>
+  man-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(20ch, 100%), 1fr));
+
+    b {
+      background-color: light-dark(white, black);
+      opacity: var(--show-title, 0);
+      position: absolute;
+      inset: 0;
+      place-self: center;
+    }
+
+    a:any-link {
+      border: medium solid;
+      display: block;
+      position: relative;
+    }
+
+    a:focus,
+    a:focus-within,
+    a:hover,
+    a:active {
+      --show-title: 1;
+      border-color: var(--accent);
+      rotate: 2deg;
+      scale: 1.05;
+      z-index: 2;
+    }
+
+    img {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      object-fit: cover;
+    }
+  }
+</style>

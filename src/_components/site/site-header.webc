@@ -1,7 +1,10 @@
 <header>
   <template webc:if="this.url === '/'" webc:nokeep>
     <h1 @html="site.title"></h1>
-    <a href="/report/">report</a>
+
+    <div>
+      <a href="/report/">report</a>
+    </div>
   </template>
 
   <template webc:else webc:nokeep>
@@ -16,14 +19,12 @@
     margin: 0;
   }
 
-  site-header {
-    text-transform: lowercase;
-    view-transition-name: site-header;
-  }
-
-  header {
+  body > header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-block: var(--gap);
+    text-transform: lowercase;
+    view-transition-name: site-header;
   }
 </style>

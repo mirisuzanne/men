@@ -1,0 +1,38 @@
+---
+layout: base
+---
+<pre
+  webc:if="this.content"
+  @html="this.content.trim()"
+  id="intro"
+></pre>
+
+<figure>
+  <div class="evidence">
+    <man-img
+      @pre-set="hero"
+      :src="this.hero"
+      :alt="this.alt"
+    ></man-img>
+  </div>
+  <figcaption
+    @text="asDate(this.date)"
+  ></figcaption>
+</figure>
+
+<p webc:if="!(this.content && this.alt)" class="alert">
+  ⚠️ This report is missing important details.
+  Help us out by
+  <a :href="[github.repo, github.files, page.inputPath].join('')">
+    providing image alt text and captions</a>.
+</p>
+
+<style>
+  .evidence {
+    content-visibility: auto;
+    contain-intrinsic-block-size: 4lh;
+    border: medium solid;
+    margin-block: var(--gap);
+    margin-inline: calc(var(--gap) * -1);
+  }
+</style>

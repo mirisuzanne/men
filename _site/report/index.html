@@ -5,10 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="view-transition" content="same-origin">
-  <title>Submit a Report</title>
+  <title>Report a sighting</title>
   <link rel="stylesheet" href="/css/style.css">
   <style>block-quote {
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(min-content, 65rch);
+  justify-content: safe center;
 }
 
 .quote {
@@ -18,15 +20,23 @@
 blockquote {
   font-style: italic;
   margin: 0;
-}
 
-blockquote > p:first-child {
-  margin-block-start: 0;
+  > p:first-child {
+    margin-block-start: 0;
+  }
+
+  > p:last-child {
+    margin-block-end: 0;
+  }
 }
 input, textarea {
     display: block;
     font: inherit;
     width: 100%;
+
+    &:focus {
+      border-color: var(--accent);
+    }
   }
 
   textarea {
@@ -35,50 +45,49 @@ input, textarea {
   }
 
   button {
+    background-color: transparent;
+    border: medium solid;
     font: inherit;
+    padding-inline: var(--gap);
+
+    &:focus,
+    &:hover {
+      border-color: var(--accent);
+    }
   }
 h1 {
     font: inherit;
     margin: 0;
   }
 
-  site-header {
-    text-transform: lowercase;
-    view-transition-name: site-header;
-  }
-
-  header {
+  body > header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
-footer {
-    border-block-start: medium dotted;
-    margin-block-start: 1em;
+    padding-block: var(--gap);
+    text-transform: lowercase;
+    view-transition-name: site-header;
   }</style>
 </head>
 <body>
-  <site-header><header>
+  <header>
   
 
   
     <a href="/" rel="home">[men]</a>
-    <h1>Submit a Report</h1>
+    <h1>Report a sighting</h1>
   
 </header>
 
 
-</site-header>
+
 
   <main><block-quote id="intro"><figure class="quote">
   <blockquote>
     <p>Be vigitant, I beseech you.
 </p>
   </blockquote>
-  <figcaption>
-    [<b>Dogberry</b>,
-      <i>Much Ado About Nothing</i>]
-  </figcaption>
+  
 </figure>
 
 
@@ -86,7 +95,7 @@ footer {
 
 <form name="contact" method="POST" action="/thanks/" netlify-honeypot="bot-field" data-netlify="true">
   <p>
-    <label for="name">Name:</label>
+    <label for="name">Your Name:</label>
     <input type="text" name="name" id="name" required>
   </p>
   <p>
@@ -108,27 +117,22 @@ footer {
     <input name="bot-field">
   </p>
   <p>
-    <button type="submit">Report</button>
+    <button type="submit">Report →</button>
   </p>
 </form>
 
 
 </main>
 
-  <site-footer><footer>
-  <p class="cta">
-    (<a href="/report/">if you see something, say something »</a>)
-  </p>
+  <footer>
   <p>
-    (breaking news,
-    <a href="https://miriamsuzanne.com/">Miriam Suzanne</a>
+    <time>2024</time>
     ©
-    <time>2023</time>)
+    <a href="https://miriamsuzanne.com/">Miriam Suzanne</a>
+    (not a man)
   </p>
 </footer>
 
-
-</site-footer>
   <script></script>
 
 

@@ -1,36 +1,37 @@
-const path = require('path');
-const fsPromises = require('fs/promises');
-const slugify = require('slugify');
+import { readdir } from 'node:fs/promises';
 
-const filePath = path.resolve(__dirname, '../../.frontmatter/database/mediaDb.json');
-const ready = '-@-';
+const imageFolder = './src/men/';
 
 const imgData = async () => {
   try {
-    // Get the content of the JSON file
-    const data = await fsPromises.readFile(filePath);
+    const files = await readdir(imageFolder, {recursive: true});
 
-    // Turn it to an object
-    const imageJson = JSON.parse(data).assets.images;
+    const getName = (path) => {
+      return path.slice(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
+    }
 
-    const imageData = Object.keys(imageJson)
-      .filter((url) => url.includes(ready))
-      .map((url) => {
-        const img = imageJson[url];
-        img.url = url;
-        img.draft = url.includes('draft');
-        img.date = url
-          .split(ready).at(-1)
-          .split('.').at(0);
-        img.permalink = `${slugify(img.date)}/${slugify(img.title.toLowerCase())}`;
+    const getDate = (path) => {
+      return path.slice(path.indexOf('/') + 1, path.indexOf('T'));
+    }
+
+    const pages = files
+      .filter((path) => {
+        const ext = path.split('.').at(-1);
+        return ['jpg', 'jpeg', 'webp', 'avif'].includes(ext);
+      })
+      .map((path) => {
+        const img = { path };
+        img.name = getName(path);
+        img.date = getDate(path);
+
         return img;
       })
       .sort((a, b) => a.date - b.date);
 
-      return imageData;
+    return pages;
   } catch (err){
     console.log(err);
   }
 }
 
-module.exports = imgData();
+export default imgData();

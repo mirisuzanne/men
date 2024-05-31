@@ -1,17 +1,18 @@
-require('dotenv').config();
+import 'dotenv/config';
 
-const yaml = require('js-yaml');
+import { load } from 'js-yaml';
 
-const pluginWebc = require('@11ty/eleventy-plugin-webc');
-const { EleventyRenderPlugin } = require('@11ty/eleventy');
-const imgPlugin= require("./plugins/images");
+import eleventyWebcPlugin from '@11ty/eleventy-plugin-webc';
+import { eleventyImagePlugin } from '@11ty/eleventy-img';
 
+// import imgPlugin from "./plugins/images.js";
+import timePlugin from "./plugins/time.js";
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(EleventyRenderPlugin);
-  eleventyConfig.addPlugin(pluginWebc, {
+export default function(eleventyConfig) {
+  eleventyConfig.addPlugin(eleventyWebcPlugin, {
     components: [
       'src/_components/**/*.webc',
+      'npm:@11ty/eleventy-img/*.webc',
     ],
   });
 
@@ -20,26 +21,24 @@ module.exports = function(eleventyConfig) {
     return `/data-men/${slugify(img.date)}/index.html`;
   });
 
-  // Image plugin
-  eleventyConfig.addPlugin(imgPlugin, {
-    imgFolder: './assets/images/',
-    output: {
-      formats: ['avif', 'jpeg'],
-      widths: [640, 960, 1600],
-      urlPath: '/img/',
-      outputDir: './_site/img/',
-    },
-    sizes: {
-      default: '100vw',
-    },
-  });
+  // Plugins
+  eleventyConfig.addPlugin(timePlugin);
+	eleventyConfig.addPlugin(eleventyImagePlugin, {
+		// Set global default options
+		formats: ["avif", "jpeg"],
+		urlPath: "/img/",
+    widths: [640, 960, 1600],
 
-  eleventyConfig.addPassthroughCopy({
-    'assets/css': 'css',
-  });
+		defaultAttributes: {
+			loading: "lazy",
+			decoding: "async",
+		},
+	});
+
+  eleventyConfig.addPassthroughCopy('src/css');
 
   eleventyConfig.setLiquidOptions({jsTruthy: true});
-  eleventyConfig.addDataExtension('yml, yaml', (c) => yaml.load(c));
+  eleventyConfig.addDataExtension('yml, yaml', (c) => load(c));
   eleventyConfig.setQuietMode(true);
 
   return {
