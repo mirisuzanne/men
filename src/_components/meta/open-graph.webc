@@ -1,0 +1,20 @@
+<script webc:setup>
+  const imgSrc = (page, site) => {
+    const api = 'https://v1.screenshot.11ty.dev/';
+    const url = `${site}/_og${page}`;
+    const encoded = encodeURIComponent(url);
+    return `${api}${encoded}/opengraph/_wait:2_${new Date().toISOString()}`;
+  }
+</script>
+
+<link
+  href="https://v1.opengraph.11ty.dev/"
+  rel="preconnect"
+  crossorigin>
+<meta property="og:type" content="website" />
+<meta property="og:title" :content="this.title">
+<meta property="og:image" :content="imgSrc(page.url, site.url)">
+<meta property="og:url" :content="absoluteUrl(page.url, site.url)">
+<meta property="og:site_name" :content="site.title">
+<meta property="og:description" :content="desc">
+<meta name="description" :content="desc">
