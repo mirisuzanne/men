@@ -27,6 +27,7 @@
       'footer' auto
       / minmax(0, 1fr)
     ;
+    margin: 0;
     padding: var(--gap);
   }
 

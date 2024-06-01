@@ -4,7 +4,7 @@
   <b @text="asDate(item.date)"></b>
   <man-img
     @pre-set="grid"
-    :src="item.data.hero"
+    :@src="item.data.hero"
   ></man-img>
 </a>
 

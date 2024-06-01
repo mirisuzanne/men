@@ -11,8 +11,8 @@ layout: base
   <div class="evidence">
     <man-img
       @pre-set="hero"
-      :src="this.hero"
-      :alt="this.alt"
+      :@src="this.hero"
+      :@alt="this.alt"
     ></man-img>
   </div>
   <figcaption

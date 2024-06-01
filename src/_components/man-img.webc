@@ -12,6 +12,12 @@
       loading: 'eager',
       decoding: 'auto',
     },
+    og: {
+      sizes: '100vw',
+      width: '1280',
+      loading: 'eager',
+      decoding: 'auto',
+    },
   };
 </script>
 
