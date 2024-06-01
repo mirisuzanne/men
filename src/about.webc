@@ -4,6 +4,7 @@ title: much ado about nothing
 ---
 
 <p id="intro">
+  <strong @text="`[ ${collections.men.length} active men ]`"></strong>
   This is serious.
 </p>
 
