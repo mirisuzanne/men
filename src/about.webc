@@ -1,0 +1,9 @@
+---
+layout: base
+title: much ado about nothing
+---
+
+<p id="intro">
+  This is serious.
+</p>
+

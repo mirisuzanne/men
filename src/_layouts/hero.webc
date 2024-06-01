@@ -20,12 +20,51 @@ layout: base
   ></figcaption>
 </figure>
 
-<p webc:if="!(this.content && this.alt)" class="alert">
-  ⚠️ This report is missing important details.
-  Help us out by
-  <a :href="[github.repo, github.files, page.inputPath].join('')">
-    providing image alt text and captions</a>.
-</p>
+<details
+  webc:if="!(this.content && this.alt)"
+  class="alert"
+>
+  <summary>⚠️ Help us with missing captions and image descriptions</summary>
+
+  <p>
+    <a :href="[github.repo, github.edit, page.inputPath].join('')">
+      Edit this page on GitHub</a>, or…
+  </p>
+
+  <form
+    name="content"
+    method="POST"
+    action="/thanks/"
+    netlify-honeypot="bot-field"
+    data-netlify="true"
+  >
+    <p>
+      <label for="name">Your Name:</label>
+      <input type="text" name="name" id="name" required />
+    </p>
+    <p>
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required />
+    </p>
+    <p>
+      <label for="message">What does the closed captioning say?</label>
+      <textarea name="message" id="message"></textarea>
+    </p>
+    <p>
+      <label for="image">Briefly describe the image:</label>
+      <textarea name="message" id="message"></textarea>
+    </p>
+    <p hidden>
+      <label>
+        Don’t fill this out if you’re human:
+      </label>
+      <input name="bot-field" />
+    </p>
+    <p>
+      <button type="submit">Submit →</button>
+    </p>
+  </form>
+</details>
 
 <style>
   .evidence {
@@ -34,5 +73,9 @@ layout: base
     border: medium solid;
     margin-block: var(--gap);
     margin-inline: calc(var(--gap) * -1);
+  }
+
+  .alert {
+    margin-block: var(--gap);
   }
 </style>

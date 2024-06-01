@@ -1,6 +1,6 @@
 <header>
   <template webc:if="this.url === '/'" webc:nokeep>
-    <h1 @html="site.title"></h1>
+    <h1 @html="this.short"></h1>
 
     <div>
       <a href="/report/">report</a>
@@ -8,7 +8,7 @@
   </template>
 
   <template webc:else webc:nokeep>
-    <a href="/" rel="home" @html="site.title"></a>
+    <a href="/" rel="home" @html="this.short"></a>
     <h1 @html="this.title"></h1>
   </template>
 </header>

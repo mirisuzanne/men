@@ -12,8 +12,8 @@
 <body>
   <site-header
     webc:nokeep
-    :@site="site"
     :@title="this.title || site.title"
+    :@short="site.short"
     :@url="this.page.url"
   ></site-header>
 
@@ -24,6 +24,7 @@
 
   <site-footer
     webc:nokeep
+    :@title="site.title"
     :@author="site.author"
   ></site-footer>
   <script @raw="getBundle('js')" webc:keep></script>

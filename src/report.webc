@@ -45,32 +45,3 @@ quote:
     <button type="submit">Report →</button>
   </p>
 </form>
-
-<style>
-  input, textarea {
-    display: block;
-    font: inherit;
-    width: 100%;
-
-    &:focus {
-      border-color: var(--accent);
-    }
-  }
-
-  textarea {
-    block-size: 4em;
-    block-size: 4lh;
-  }
-
-  button {
-    background-color: transparent;
-    border: medium solid;
-    font: inherit;
-    padding-inline: var(--gap);
-
-    &:focus,
-    &:hover {
-      border-color: var(--accent);
-    }
-  }
-</style>

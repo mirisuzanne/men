@@ -4,7 +4,7 @@ import { writeFile, readdir } from 'node:fs/promises';
 
 const imageFolder = './src/men/';
 
-exec(
+const sortImages = exec(
   `exiftool -d '%Y/%Y-%m-%dT%H%M%%-03.c.%%e' '-filename<CreateDate' .`,
   {cwd: imageFolder},
   (error, stdout, stderr) => {
@@ -16,6 +16,7 @@ exec(
     console.error(`stderr: ${stderr}`);
   }
 );
+await new Promise( (resolve) => { sortImages.on('close', resolve) });
 
 const getLink = (path) => {
   return path.slice(0, path.lastIndexOf('.'));
@@ -55,5 +56,11 @@ images.forEach((img) => {
 date: ${img.date}
 title: ${img.name}
 hero: ${img.path}
+
+# briefly describe the image…
+alt: ''
+
+# insert the closed caption text after the three-dash break…
+# (include line-breaks, punctuation, and capitalization)
 ---`);
 });

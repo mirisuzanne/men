@@ -54,7 +54,7 @@
   #intro {
     border-block-end: medium dotted;
     font-size: 1.5em;
-    margin-block-end: var(--gap);
+    margin-block: 0 var(--gap);
     padding-block-end: var(--gap);
   }
 
@@ -75,4 +75,32 @@
   figure {
     margin: 0;
   }
+
+  input, textarea {
+    display: block;
+    font: inherit;
+    width: 100%;
+
+    &:focus {
+      border-color: var(--accent);
+    }
+  }
+
+  textarea {
+    block-size: 4em;
+    block-size: 4lh;
+  }
+
+  button {
+    background-color: transparent;
+    border: medium solid;
+    font: inherit;
+    padding-inline: var(--gap);
+
+    &:focus,
+    &:hover {
+      border-color: var(--accent);
+    }
+  }
+
 }
