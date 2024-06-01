@@ -8,7 +8,8 @@
 
 Contributing:
 
-1. Drop images directly into `src/men`
+1. Drop (`jpg`/`jpeg`) images directly into `src/men`
 2. `npm run sort`
-3. (add image metadata where missing)
-4. `npm run build` or `npm run serve`
+3. (add image metadata to newly created `.md` files)
+4. `npm run build` or `npm run serve` to test
+5. commit and push to github
