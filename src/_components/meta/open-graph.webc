@@ -5,6 +5,8 @@
     const encoded = encodeURIComponent(url);
     return `${api}${encoded}/opengraph/_wait:2_${new Date().toISOString()}`;
   }
+
+  const stripBreaks = (string) => string.replace(/(\r\n|\n|\r)/gm, " ");
 </script>
 
 <link
@@ -16,5 +18,5 @@
 <meta property="og:image" :content="imgSrc(page.url, site.url)">
 <meta property="og:url" :content="absoluteUrl(page.url, site.url)">
 <meta property="og:site_name" :content="site.title">
-<meta property="og:description" :content="desc">
-<meta name="description" :content="desc">
+<meta property="og:description" :content="stripBreaks(desc)">
+<meta name="description" :content="stripBreaks(desc)">

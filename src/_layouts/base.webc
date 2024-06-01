@@ -17,7 +17,7 @@
     :@page="page"
     :@site="site"
     :@title="this.title || site.title"
-    :@desc="this.page.rawInput || site.description">
+    :@desc="(this.hero && this.page.rawInput) || site.description">
 </head>
 <body>
   <site-header
