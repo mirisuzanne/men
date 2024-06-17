@@ -47,11 +47,11 @@ const images = files
   });
 
 images.forEach((img) => {
-  const mdFileName = `${img.link}.md`;
-  if (files.includes(mdFileName)) { return; }
+  const srcFileName = `${img.link}.webc`;
+  if (files.includes(srcFileName)) { return; }
 
   writeFile(
-    `${imageFolder}/${mdFileName}`,
+    `${imageFolder}/${srcFileName}`,
     `---
 date: ${img.date}
 title: ${img.name}
