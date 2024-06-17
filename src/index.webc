@@ -17,4 +17,7 @@ quote:
   id="intro"
 ></block-quote>
 
-<man-grid :@men="collections.men"></man-grid>
+<man-grid
+  :@men="collections.men"
+  :@newest="collections.men.at(-1).date"
+></man-grid>

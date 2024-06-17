@@ -3,22 +3,23 @@ layout: base
 ---
 <pre
   webc:if="this.content"
-  @html="this.content.trim()"
+  @raw="this.content.trim()"
   id="intro"
 ></pre>
 
-<figure>
-  <div class="evidence">
-    <man-img
-      @pre-set="hero"
-      :@src="this.hero"
-      :@alt="this.alt"
-    ></man-img>
-  </div>
-  <figcaption
-    @text="asDate(this.date)"
-  ></figcaption>
-</figure>
+<div class="evidence">
+  <man-img
+    @pre-set="hero"
+    :@src="this.hero"
+    :@alt="this.alt"
+  ></man-img>
+</div>
+
+<man-nav
+  :@date="this.date"
+  :@previous="getPreviousCollectionItem(collections.men)"
+  :@next="getNextCollectionItem(collections.men)"
+></man-nav>
 
 <details
   webc:if="!(this.content && this.alt)"
@@ -76,6 +77,6 @@ layout: base
   }
 
   .alert {
-    margin-block: var(--gap);
+    margin-block-start: calc(var(--gap) * 4);
   }
 </style>

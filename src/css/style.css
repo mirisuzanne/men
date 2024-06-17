@@ -37,6 +37,7 @@
         minmax(var(--gap), 1fr) [full-end];
     min-block-size: 100%;
     padding-inline: var(--gap);
+    overflow-x: clip;
 
     > header { grid-area: header; }
     > main {
@@ -48,14 +49,13 @@
 
   main {
     border-block: medium dotted;
-    padding-block: var(--gap);
+    padding-block: var(--gap) calc(var(--gap) * 4);
   }
 
   #intro {
-    border-block-end: medium dotted;
+    display: flow-root;
     font-size: 1.5em;
     margin-block: 0 var(--gap);
-    padding-block-end: var(--gap);
   }
 
   a:any-link {

@@ -3,6 +3,7 @@
     <h1 @html="this.short"></h1>
 
     <div>
+      <a href="/about/">about</a>
       <a href="/report/">report</a>
     </div>
   </template>

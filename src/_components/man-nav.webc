@@ -1,0 +1,32 @@
+<nav class="pagination">
+  <time
+    datetime="this.date.toISOString()"
+    @text="asDate(this.date)"
+  ></time>
+
+  <span>
+    [<a
+      webc:if="this.previous"
+      :href="this.previous.url"
+    >prior men</a><span webc:else
+    >no prior men</span>]
+  </span>
+
+  <span>
+    [<a
+      webc:if="this.next"
+      :href="this.next.url"
+    >men continue</a><span webc:else
+    >no more men</span>]
+  </span>
+</nav>
+
+<style>
+.pagination {
+  display: flex;
+  flex-flow: wrap;
+  gap: var(--gap);
+  justify-content: space-between;
+  text-align: center;
+}
+</style>

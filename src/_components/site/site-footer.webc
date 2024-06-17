@@ -1,12 +1,9 @@
 <footer>
   <p>
     <strong @text="this.title"></strong>
-    &copy; <time @text="new Date().getFullYear()"></time>
-    <br>
+    &copy;
+    <time @text="new Date().getFullYear()"></time>
     <a href="https://miriamsuzanne.com/" @text="this.author"></a>
-    (not a man)
-  </p>
-  <p>
-    [<a href="/about/">about the project</a>]
+    [not a man]
   </p>
 </footer>

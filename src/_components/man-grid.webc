@@ -1,6 +1,8 @@
 <a
   webc:for="item of this.men.sort((a, b) => Math.random() - 0.5)"
-  :href="item.url">
+  :href="item.url"
+  :is-recent="this.newest && item.date.getUTCFullYear() === this.newest.getUTCFullYear()"
+>
   <b @text="asDate(item.date)"></b>
   <man-img
     @pre-set="grid"
@@ -22,9 +24,26 @@
     }
 
     a:any-link {
+      background: Canvas;
       border: medium solid;
-      display: block;
+      display: grid;
+      align-content: center;
       position: relative;
+
+
+      &:nth-child(odd) {
+        --dir: -1;
+      }
+      &:nth-child(3n - 1) {
+        --rotate: 1.5;
+        --dir: 1;
+      }
+      &:nth-child(3n - 5) {
+        --dir: -1;
+      }
+      &:nth-child(3n - 7) {
+        --rotate: 0.75;
+      }
     }
 
     a:focus,
@@ -33,15 +52,17 @@
     a:active {
       --show-title: 1;
       border-color: var(--accent);
-      rotate: 2deg;
-      scale: 1.05;
+      rotate: calc(var(--rotate, 2) * var(--dir, 1) * 1deg);
+      scale: var(--scale, 1.1);
       z-index: 2;
     }
 
-    img {
-      aspect-ratio: 16/9;
-      overflow: hidden;
-      object-fit: cover;
+    a[is-recent] {
+      border-color: var(--accent);
+    }
+
+    @media (width > 50em) {
+      --scale: 1.2;
     }
   }
 </style>
