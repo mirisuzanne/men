@@ -19,5 +19,5 @@ quote:
 
 <man-grid
   :@men="collections.men"
-  :@newest="collections.men.at(-1).date"
+  :style="`--now: ${new Date().getFullYear()}`"
 ></man-grid>

@@ -1,18 +1,20 @@
 <a
   webc:for="item of this.men.sort((a, b) => Math.random() - 0.5)"
   :href="item.url"
-  :is-recent="this.newest && item.date.getUTCFullYear() === this.newest.getUTCFullYear()"
+  :style="`--year: ${item.date.getUTCFullYear()};`"
 >
   <b @text="asDate(item.date)"></b>
   <man-img
     @pre-set="grid"
     :@src="item.data.hero"
+    :@alt="item.data.alt"
   ></man-img>
 </a>
 
 <style>
   man-grid {
     display: grid;
+    gap: 3px;
     grid-template-columns: repeat(auto-fit, minmax(min(20ch, 100%), 1fr));
 
     b {
@@ -24,12 +26,17 @@
     }
 
     a:any-link {
+      --offset: (var(--now) - var(--year));
+      --year-color: color-mix(
+        in oklch,
+        var(--accent),
+        oklch(none calc(100% - (10% * var(--offset))) calc(var(--offset) * 50deg))
+      );
       background: Canvas;
-      border: medium solid;
+      border: medium var(--alt, dashed) var(--year-color, currentColor);
       display: grid;
       align-content: center;
       position: relative;
-
 
       &:nth-child(odd) {
         --dir: -1;
@@ -44,6 +51,10 @@
       &:nth-child(3n - 7) {
         --rotate: 0.75;
       }
+
+      &:has(img[alt]:not([alt=''])) {
+        --alt: solid;
+      }
     }
 
     a:focus,
@@ -51,14 +62,9 @@
     a:hover,
     a:active {
       --show-title: 1;
-      border-color: var(--accent);
       rotate: calc(var(--rotate, 2) * var(--dir, 1) * 1deg);
       scale: var(--scale, 1.1);
       z-index: 2;
-    }
-
-    a[is-recent] {
-      border-color: var(--accent);
     }
 
     @media (width > 50em) {

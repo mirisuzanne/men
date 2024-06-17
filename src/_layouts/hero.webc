@@ -1,10 +1,13 @@
 ---
 layout: base
 ---
+
 <pre
   webc:if="this.content"
   @raw="this.content.trim()"
   id="intro"
+  class="caption"
+  @attributes="this.text ? ({ style: `--align: ${this.text}`}) : ({})"
 ></pre>
 
 <div class="evidence">
@@ -68,6 +71,10 @@ layout: base
 </details>
 
 <style>
+  .caption {
+    text-align: var(--align, center);
+  }
+
   .evidence {
     content-visibility: auto;
     contain-intrinsic-block-size: 4lh;

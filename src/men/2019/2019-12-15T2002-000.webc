@@ -2,10 +2,20 @@
 date: 2019-12-15
 title: 2019-12-15T2002-000
 hero: 2019/2019-12-15T2002-000.jpeg
+text: left
 
 # briefly describe the image…
-alt: ''
+alt: >
+  Interior,
+  a sparse warehouse room
+  with three men facing a door -
+  one in a read sweatsuit and ski mask,
+  one in black with a metal helmet,
+  and one in a suit and cowboy hat
 
 # insert the closed caption text after the three-dash break…
 # (include line-breaks, punctuation, and capitalization)
 ---
+
+-(man shouting, screaming)
+-Where is he?!
