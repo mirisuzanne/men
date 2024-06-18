@@ -73,6 +73,7 @@ layout: base
 <style>
   .caption {
     text-align: var(--align, center);
+    white-space: pre-line;
   }
 
   .evidence {
