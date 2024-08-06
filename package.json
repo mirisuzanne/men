@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "serve": "eleventy --serve --incremental",
+    "dev": "eleventy --serve --incremental",
     "build": "eleventy",
     "sort": "node scripts/sort-images.js"
   },
