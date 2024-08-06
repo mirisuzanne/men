@@ -17,6 +17,7 @@ export default function(eleventyConfig) {
     components: [
       'src/_components/**/*.webc',
       'npm:@11ty/eleventy-img/*.webc',
+      'npm:@terriblemia/ground-control/*.webc',
     ],
   });
 

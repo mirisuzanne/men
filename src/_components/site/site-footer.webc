@@ -6,4 +6,12 @@
     <a href="https://miriamsuzanne.com/" @text="this.author"></a>
     [not a man]
   </p>
+  <toggle-control
+    data-prop="color-scheme"
+    data-off="light dark"
+    data-local="color-scheme"
+  >
+    <button>light</button>
+    <button>dark</button>
+  </toggle-control>
 </footer>

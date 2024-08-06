@@ -52,6 +52,10 @@
     padding-block: var(--gap) calc(var(--gap) * 4);
   }
 
+  footer {
+    padding-block-end: var(--gap);
+  }
+
   #intro {
     display: flow-root;
     font-size: 1.5em;
@@ -102,6 +106,10 @@
     &:hover {
       border-color: var(--accent);
     }
-  }
 
+    &[aria-pressed=true] {
+      background-color: var(--accent);
+      color: Canvas;
+    }
+  }
 }
